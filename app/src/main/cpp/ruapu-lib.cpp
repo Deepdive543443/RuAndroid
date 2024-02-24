@@ -20,7 +20,7 @@ Java_com_example_ruandroid_MainActivity_stringFromJNI(
 
     ruapu_init();
 
-#if __aarch64__ || defined(_M_ARM64)
+#if __ANDROID__
     PRINT_ISA_SUPPORT(neon)
     PRINT_ISA_SUPPORT(vfpv4)
     PRINT_ISA_SUPPORT(cpuid)
@@ -39,19 +39,6 @@ Java_com_example_ruandroid_MainActivity_stringFromJNI(
     PRINT_ISA_SUPPORT(sm3)
     PRINT_ISA_SUPPORT(sm4)
     PRINT_ISA_SUPPORT(amx)
-
-#elif __arm__ || defined(_M_ARM)
-    PRINT_ISA_SUPPORT(edsp)
-    PRINT_ISA_SUPPORT(neon)
-    PRINT_ISA_SUPPORT(vfpv4)
-
-#elif __riscv
-    PRINT_ISA_SUPPORT(i)
-    PRINT_ISA_SUPPORT(m)
-    PRINT_ISA_SUPPORT(a)
-    PRINT_ISA_SUPPORT(f)
-    PRINT_ISA_SUPPORT(d)
-    PRINT_ISA_SUPPORT(c)
 
 #endif
 
